@@ -159,6 +159,7 @@ func (p *printer) closeblock() { p.print("\n}") }
 //
 func (p *printer) rangeBlock(idx string, iter string, t traversal, inner Elem) {
 	p.printf("\n for %s := range %s {", idx, iter)
+	p.printf("\n _ = %s", idx)
 	next(t, inner)
 	p.closeblock()
 }
